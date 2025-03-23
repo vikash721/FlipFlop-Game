@@ -37,7 +37,7 @@ const HeroSection = ({ handleTerminalClick, handleDocsClick, heroVariants, itemV
           whileHover={{ scale: 1.05, boxShadow: "0 0 15px rgba(59, 130, 246, 0.5)" }}
           whileTap={{ scale: 0.98 }}
           onClick={handleTerminalClick}
-          className="px-6 py-3.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg text-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all flex items-center justify-center gap-2 shadow-lg shadow-blue-500/20"
+          className="px-6 py-3.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg text-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all flex items-center justify-center gap-2 shadow-lg shadow-blue-500/20 cursor-pointer"
         >
           <FiTerminal /> Open Terminal
         </motion.button>
@@ -46,7 +46,7 @@ const HeroSection = ({ handleTerminalClick, handleDocsClick, heroVariants, itemV
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.98 }}
           onClick={handleDocsClick}
-          className="px-6 py-3.5 bg-transparent border border-gray-700 hover:border-gray-500 text-white rounded-lg text-lg font-medium transition-all flex items-center justify-center gap-2"
+          className="px-6 py-3.5 bg-transparent border border-gray-700 hover:border-gray-500 text-white rounded-lg text-lg font-medium transition-all flex items-center justify-center gap-2 cursor-pointer"
         >
           <FiBookOpen /> Documentation
         </motion.button>

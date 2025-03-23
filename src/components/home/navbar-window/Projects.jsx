@@ -18,7 +18,7 @@ const Projects = () => {
         "A community-driven event management platform for SDIET College with role-based access, faculty panel, and a modern UI.",
       tags: ["React.js", "Node.js","Zustand", "Tailwind CSS"],
       image: "https://i.imgur.com/U22XDcZ.png",
-      github: "#",
+      github: null,
       demo: "https://sdiet-techies721.netlify.app/",
       category: "Web App",
       featured: true,
@@ -29,8 +29,8 @@ const Projects = () => {
       description: "A real-time chat application with user authentication, group messaging, and a sleek UI. Built as my 3rd-semester project.",
       tags: ["React.js", "Firebase", "Tailwind CSS", "Firestore"],
       image: "https://i.imgur.com/O9yQ71z.png",
-      github: "#",
-      demo: "#",
+      github: "https://github.com/vikash721/ChatRoom",
+      demo: "https://chatroom-80f1e.web.app/",
       category: "Web App",
       featured: true,
     },
@@ -41,18 +41,18 @@ const Projects = () => {
         "A fast and intuitive image search website with real-time filtering and a responsive UI for seamless browsing.",
       tags: ["HTML", "CSS", "Javascript", "Unsplash API"],
       image: "https://i.imgur.com/RSfZdho.png",
-      github: "#",
+      github: "https://github.com/vikash721/Pixev",
       demo: "https://pixev.netlify.app/",
       category: "Web App",
     },
     {
       id: 4,
-      title: "Portfolio Website Template",
+      title: "My Portfolio",
       description:
-        "A customizable portfolio template for developers and designers with dark/light mode and animations.",
+        "A modern portfolio with a blend of sleek UI components and a terminal-style interactive experience, built using React and Tailwind CSS to showcase my projects, skills, and experience.",
       tags: ["React", "Framer Motion", "Tailwind CSS"],
-      image: "/placeholder.svg?height=600&width=800",
-      github: "#",
+      image: "https://i.imgur.com/Ng8ofDM.png",
+      github: null,
       demo: "#",
       category: "UI/UX",
     },
@@ -61,11 +61,11 @@ const Projects = () => {
       title: "FlipFlop Game",
       description:
         "A fun and interactive card-flipping game where you collect diamonds, but flipping a bomb ends the game.",
-      tags: ["React.js", "Modular CSS", "", "Firebase"],
+      tags: ["React.js", "Modular CSS",],
       image: "https://i.imgur.com/2EM8x4h.png",
-      github: "#",
+      github: "https://github.com/vikash721/FlipFlop-Game",
       demo: "#",
-      category: "Web App",
+      category: "Game",
     },
     {
       id: 6,
@@ -75,11 +75,11 @@ const Projects = () => {
       image: "https://i.imgur.com/dMXG2cU.png",
       github: "https://github.com/vikash721/Pixev",
       demo: "https://travel-website-vikash.netlify.app/",
-      category: "Mobile App",
+      category: "UI/UX",
     },
   ]
 
-  const categories = ["All", "Web App", "Mobile App", "UI/UX", "AI"]
+  const categories = ["All", "Web App", "Game", "UI/UX", "AI"]
 
   const filteredProjects =
     activeFilter === "All" ? projects : projects.filter((project) => project.category === activeFilter)
@@ -154,7 +154,7 @@ const Projects = () => {
           className="text-center mt-12"
         >
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/vikash721"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg font-medium transition-all"

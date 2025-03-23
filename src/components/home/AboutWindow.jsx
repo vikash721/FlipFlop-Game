@@ -40,9 +40,9 @@ const AboutWindow = ({ showAbout, isAboutFullscreen, setIsAboutFullscreen, setSh
                 className="p-1 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700/50 transition-colors"
               >
                 {isAboutFullscreen ? (
-                  <FiMinimize2 className="text-gray-600 dark:text-gray-400" />
+                  <FiMinimize2 className="text-gray-600 dark:text-gray-400 cursor-pointer" />
                 ) : (
-                  <FiMaximize2 className="text-gray-600 dark:text-gray-400" />
+                  <FiMaximize2 className="text-gray-600 dark:text-gray-400 cursor-pointer" />
                 )}
               </motion.button>
               <motion.button
@@ -51,7 +51,7 @@ const AboutWindow = ({ showAbout, isAboutFullscreen, setIsAboutFullscreen, setSh
                 onClick={() => setShowAbout(false)}
                 className="p-1 rounded-md hover:bg-red-500/20 transition-colors"
               >
-                <FiX className="text-gray-600 dark:text-gray-400 hover:text-red-500" />
+                <FiX className="text-gray-600 dark:text-gray-400 hover:text-red-500 cursor-pointer" />
               </motion.button>
             </div>
           </div>

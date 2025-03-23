@@ -31,25 +31,28 @@ const About = () => {
     {
       category: "Backend",
       icon: <FiServer className="text-green-400" size={24} />,
-      items: ["Node.js", "Express", "Python", "Django", "GraphQL"],
+      items: ["Node.js", "Express"],
       color: "from-green-500 to-teal-500",
+      learning: true, // Marking as "learning"
     },
     {
       category: "Database",
       icon: <FiDatabase className="text-yellow-400" size={24} />,
-      items: ["MongoDB", "PostgreSQL", "Firebase", "Redis", "MySQL"],
+      items: ["MongoDB", "Firebase"],
       color: "from-yellow-500 to-orange-500",
+      learning: true,
     },
     {
       category: "DevOps",
       icon: <FiCode className="text-red-400" size={24} />,
-      items: ["Docker", "AWS", "CI/CD", "Git", "Linux"],
+      items: ["Docker", "CI/CD", "Git"],
       color: "from-red-500 to-pink-500",
+      learning: true,
     },
   ];
 
   return (
-    <section id="about" className="py-20 bg-[#0a0a0f] relative overflow-hidden">
+    <section id="about" className="py-20 bg-[#0a0a0f] relative overflow-hidden ">
       {/* Background elements */}
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-blue-500/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-purple-500/5 rounded-full blur-3xl"></div>
@@ -126,6 +129,13 @@ const About = () => {
                   <div className="flex items-center gap-3 mb-4">
                     {skill.icon}
                     <h3 className="text-lg font-semibold text-white">{skill.category}</h3>
+                    {skill.learning && (
+                           <motion.div variants={itemVariants} className="mb-2 inline-block">
+                             <span className="px-4 py-1.5 rounded-full text-xs font-medium bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 text-blue-400">
+                             In Progress
+                             </span>
+                           </motion.div>
+                    )}
                   </div>
                   
                   <div className="mt-2">
@@ -142,6 +152,10 @@ const About = () => {
           </motion.div>
         </motion.div>
       </div>
+
+      <div className="h-48">
+            
+        </div>
     </section>
   );
 };

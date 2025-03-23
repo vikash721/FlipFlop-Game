@@ -41,9 +41,9 @@ const ContactWindow = ({ showContact, isContactFullscreen, setIsContactFullscree
                 className="p-1 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700/50 transition-colors"
               >
                 {isContactFullscreen ? (
-                  <FiMinimize2 className="text-gray-600 dark:text-gray-400" />
+                  <FiMinimize2 className="text-gray-600 dark:text-gray-400 cursor-pointer" />
                 ) : (
-                  <FiMaximize2 className="text-gray-600 dark:text-gray-400" />
+                  <FiMaximize2 className="text-gray-600 dark:text-gray-400 cursor-pointer" />
                 )}
               </motion.button>
               <motion.button
@@ -52,7 +52,7 @@ const ContactWindow = ({ showContact, isContactFullscreen, setIsContactFullscree
                 onClick={() => setShowContact(false)}
                 className="p-1 rounded-md hover:bg-red-500/20 transition-colors"
               >
-                <FiX className="text-gray-600 dark:text-gray-400 hover:text-red-500" />
+                <FiX className="text-gray-600 dark:text-gray-400 hover:text-red-500 cursor-pointer" />
               </motion.button>
             </div>
           </div>
@@ -65,7 +65,7 @@ const ContactWindow = ({ showContact, isContactFullscreen, setIsContactFullscree
           </div>
 
           {/* Contact Status Bar */}
-          <div className="bg-gray-100 dark:bg-[#252530] py-1 px-3 text-xs text-gray-500 border-t border-gray-200 dark:border-gray-800 flex justify-between">
+          <div className="bg-gray-100 dark:bg-[#252530] py-1 px-3 text-xs text-gray-500 border-t border-gray-200 dark:border-gray-800 flex justify-between ">
             <span>Contact</span>
             <span>v1.0.0</span>
           </div>

@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
+import { FaXTwitter  } from "react-icons/fa6"
+
 
 const Navbar = ({ scrolled, mobileMenuOpen, setMobileMenuOpen, navVariants, handleNavItemClick }) => {
   return (
@@ -46,7 +48,7 @@ const Navbar = ({ scrolled, mobileMenuOpen, setMobileMenuOpen, navVariants, hand
           {[
             { icon: FiGithub, href: "https://github.com/vikash721" },
             { icon: FiLinkedin, href: "https://www.linkedin.com/in/vikashkumar721/" },
-            { icon: FiTwitter, href: "https://twitter.com/vikash_code" },
+            { icon: FaXTwitter, href: "https://twitter.com/vikash_code" },
           ].map((social, index) => (
             <motion.a
               key={index}

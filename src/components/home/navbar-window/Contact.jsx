@@ -2,7 +2,8 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { FiSend, FiMail, FiPhone, FiMapPin, FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi"
+import { FiSend, FiMail, FiPhone, FiMapPin, FiGithub, FiLinkedin} from "react-icons/fi"
+import { FaXTwitter  } from "react-icons/fa6"
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -32,56 +33,64 @@ const Contact = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   }
 
+  
+  
+
+
+
   // Handle form input changes
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
 
   // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setSubmitStatus("success")
-
-      // Reset form after successful submission
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      })
-
-      // Reset status after 5 seconds
-      setTimeout(() => {
-        setSubmitStatus(null)
-      }, 5000)
-    }, 1500)
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+  
+    try {
+      const response = await fetch("https://formspree.io/f/mvgkavbd", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        const errorData = await response.json();
+        console.error("Submission error:", errorData);
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+      setSubmitStatus("error");
+    }
+  
+    setIsSubmitting(false);
+  };
 
   // Contact info data
   const contactInfo = [
     {
       icon: <FiMail className="text-blue-400" />,
       title: "Email",
-      value: "vikash@example.com",
-      link: "mailto:vikash@example.com",
+      value: "vikashkumar355555@gmail.com",
+      link: "mailto:vikashkumar355555@gmail.com",
     },
     {
       icon: <FiPhone className="text-green-400" />,
       title: "Phone",
-      value: "+1 (555) 123-4567",
+      value: "+91 9958749688",
       link: "tel:+15551234567",
     },
     {
       icon: <FiMapPin className="text-red-400" />,
       title: "Location",
-      value: "San Francisco, CA",
-      link: "https://maps.google.com/?q=San+Francisco,+CA",
+      value: "Delhi, India",
+      link: "https://maps.google.com/?q=Delhi,+India",
     },
   ]
 
@@ -90,19 +99,19 @@ const Contact = () => {
     {
       icon: <FiGithub />,
       name: "GitHub",
-      link: "https://github.com/yourusername",
+      link: "https://github.com/vikash721",
       color: "hover:text-white",
     },
     {
       icon: <FiLinkedin />,
       name: "LinkedIn",
-      link: "https://linkedin.com/in/yourusername",
+      link: "https://www.linkedin.com/in/vikashkumar721/",
       color: "hover:text-blue-400",
     },
     {
-      icon: <FiTwitter />,
+      icon: <FaXTwitter  />,
       name: "Twitter",
-      link: "https://twitter.com/yourusername",
+      link: "https://twitter.com/vikash_code",
       color: "hover:text-blue-500",
     },
   ]
@@ -149,120 +158,112 @@ const Contact = () => {
 
               <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">
-                      Your Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white"
-                      placeholder="John Doe"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">
-                      Your Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white"
-                      placeholder="john@example.com"
-                    />
-                  </div>
-                </div>
+                 <div>
+          <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">
+            Your Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white"
+            placeholder="John Doe"
+          />
+        </div>
+        <div>
+          <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">
+            Your Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white"
+            placeholder="john@example.com"
+          />
+        </div>
+      </div>
 
-                <div className="mb-6">
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-400 mb-2">
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white"
-                    placeholder="Project Inquiry"
-                  />
-                </div>
+      <div className="mb-6">
+        <label htmlFor="subject" className="block text-sm font-medium text-gray-400 mb-2">
+          Subject
+        </label>
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          value={formData.subject}
+          onChange={handleChange}
+          required
+          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white"
+          placeholder="Project Inquiry"
+        />
+      </div>
 
-                <div className="mb-6">
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows="5"
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white resize-none"
-                    placeholder="Your message here..."
-                  ></textarea>
-                </div>
+      <div className="mb-6">
+        <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2">
+          Message
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          required
+          rows="5"
+          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white resize-none"
+          placeholder="Your message here..."
+        ></textarea>
+      </div>
 
-                <motion.button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className={`w-full px-6 py-3.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium transition-all flex items-center justify-center gap-2 ${
-                    isSubmitting ? "opacity-70 cursor-not-allowed" : "hover:from-blue-700 hover:to-purple-700"
-                  }`}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  {isSubmitting ? (
-                    <>
-                      <svg
-                        className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <circle
-                          className="opacity-25"
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="currentColor"
-                          strokeWidth="4"
-                        ></circle>
-                        <path
-                          className="opacity-75"
-                          fill="currentColor"
-                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                        ></path>
-                      </svg>
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      <FiSend /> Send Message
-                    </>
-                  )}
-                </motion.button>
+      <motion.button
+        type="submit"
+        disabled={isSubmitting}
+        className={`w-full px-6 py-3.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium transition-all flex items-center justify-center gap-2 ${
+          isSubmitting ? "opacity-70 cursor-not-allowed" : "hover:from-blue-700 hover:to-purple-700"
+        }`}
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+      >
+        {isSubmitting ? (
+          <>
+            <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
+            </svg>
+            Sending...
+          </>
+        ) : (
+          <>
+            <FiSend /> Send Message
+          </>
+        )}
+      </motion.button>
 
-                {submitStatus === "success" && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="mt-4 p-3 bg-green-500/20 border border-green-500/30 rounded-lg text-green-400 text-sm"
-                  >
-                    Your message has been sent successfully! I'll get back to you soon.
-                  </motion.div>
-                )}
+      {submitStatus === "success" && (
+        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="mt-4 p-3 bg-green-500/20 border border-green-500/30 rounded-lg text-green-400 text-sm">
+          Your message has been sent successfully! I'll get back to you soon.
+        </motion.div>
+      )}
+
+      {submitStatus === "error" && (
+        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="mt-4 p-3 bg-red-500/20 border border-red-500/30 rounded-lg text-red-400 text-sm">
+          Oops! Something went wrong. Please try again later.
+        </motion.div>
+      )}
               </form>
+
+
             </motion.div>
           </motion.div>
 
@@ -322,8 +323,8 @@ const Contact = () => {
               <div className="mt-8 text-center">
                 <p className="text-gray-500 text-sm">
                   Prefer email? Reach out directly at{" "}
-                  <a href="mailto:vikash@example.com" className="text-blue-400 hover:underline">
-                    vikash@example.com
+                  <a href="mailto:vikashkumar355555@gmail.com" className="text-blue-400 hover:underline">
+                  vikashkumar355555@gmail.com
                   </a>
                 </p>
               </div>

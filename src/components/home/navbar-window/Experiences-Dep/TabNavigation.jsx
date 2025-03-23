@@ -15,7 +15,7 @@ const TabNavigation = ({ activeTab, setActiveTab }) => {
           <motion.button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+            className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all cursor-pointer ${
               activeTab === tab.id
                 ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white"
                 : "text-gray-400 hover:text-white"

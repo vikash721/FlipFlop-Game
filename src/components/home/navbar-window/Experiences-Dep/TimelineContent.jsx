@@ -46,7 +46,10 @@ const TimelineContent = ({ activeTab, data, containerVariants, itemVariants }) =
                 </h3>
                 <div className="flex items-center gap-2 text-gray-400 mt-1">
                   {activeTab === "certifications" ? (
-                    <span>{item.issuer}</span>
+                    <a href="https://www.linkedin.com/in/vikashkumar721/details/certifications/" target="_blank" className="text-blue-500 hover:underline font-medium">
+                    {item.issuer}
+                  </a>
+                  
                   ) : (
                     <>
                       <span>{activeTab === "work" ? item.company : item.institution}</span>

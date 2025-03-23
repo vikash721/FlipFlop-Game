@@ -7,7 +7,7 @@ const ProjectCard = ({ project, index }) => {
   const projectVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-    hover: { y: -10, transition: { duration: 0.3 } },
+    hover: { y: -10, transition: { duration: 0.2 } },
   }
 
   return (

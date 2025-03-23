@@ -4,6 +4,16 @@ import { motion } from "framer-motion"
 import { FiGithub, FiExternalLink } from "react-icons/fi"
 
 const FeaturedProject = ({ project, index }) => {
+  const handleGithubClick = (e) => {
+    if (project.github === null || project.github === "#") {
+      e.preventDefault()
+      alert("Can't show code now, under development.")
+    } else if (project.github === "abc") {
+      e.preventDefault()
+      alert("Unique")
+    }
+  }
+
   return (
     <motion.div
       key={project.id}
@@ -19,7 +29,7 @@ const FeaturedProject = ({ project, index }) => {
       <motion.div
         className="md:w-1/2 relative overflow-hidden rounded-xl group"
         whileHover={{ scale: 1.02 }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.2 }}
       >
         <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
         <img
@@ -49,12 +59,14 @@ const FeaturedProject = ({ project, index }) => {
           ))}
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex gap-4 z-20">
           <a
-            href={project.github}
+            
+            href={project.github || "#"}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors"
+            onClick={handleGithubClick}
           >
             <FiGithub /> Code
           </a>

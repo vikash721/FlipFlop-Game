@@ -27,120 +27,198 @@ const Experience = () => {
 
   // Work experience data
   const workExperience = [
+
+    {
+        id: 6,
+        role: "Frontend Developer & Project Lead",
+        company: "SDIET Techies (College Community)",
+        location: "SDIET College",
+        duration: "2025 - Present",
+        description:
+          "Leading the development of SDIET Techies, a community platform for college events and student engagement. Designing and implementing key features, ensuring a smooth user experience, and managing project structure.",
+        achievements: [
+          "Built an event management system with role-based access control",
+          "Implemented state management using Zustand for efficient data handling",
+          "Designed a modern and responsive UI using Tailwind CSS and Framer Motion",
+        ],
+        technologies: ["React", "Tailwind CSS", "Zustand", "Spring Boot"],
+        color: "blue",
+      },
     {
       id: 1,
-      role: "Senior Frontend Developer",
-      company: "TechCorp Inc.",
-      location: "San Francisco, CA",
-      duration: "Jan 2022 - Present",
+      role: "Project Showcase Winner",
+      company: "SDIET Tech Fest 2025",
+      location: "SDIET College",
+      duration: "February 2025",
       description:
-        "Led the development of the company's flagship product, improving performance by 40%. Mentored junior developers and implemented best practices for code quality.",
+        "Showcased SDIETTechies at our college tech fest and secured 1st place.",
       achievements: [
-        "Redesigned the user interface, resulting in a 25% increase in user engagement",
-        "Implemented CI/CD pipelines, reducing deployment time by 50%",
-        "Led the migration from Angular to React, improving application performance",
+        "Presented the platform's features, including event management and student collaboration",
+        "Received top ranking for innovation and impact",
+        "Engaged with faculty and students to improve platform usability",
       ],
-      technologies: ["React", "TypeScript", "Redux", "Tailwind CSS"],
-      color: "blue",
+      technologies: ["React", "Tailwind CSS", "Zustand", "Spring Boot"],
+      color: "yellow",
     },
+
     {
-      id: 2,
-      role: "Full Stack Developer",
-      company: "InnovateTech",
-      location: "New York, NY",
-      duration: "Mar 2020 - Dec 2021",
-      description:
-        "Developed and maintained multiple web applications for clients in various industries. Collaborated with design and product teams to deliver high-quality solutions.",
-      achievements: [
-        "Built a custom e-commerce platform that increased client sales by 35%",
-        "Optimized database queries, reducing load times by 60%",
-        "Implemented responsive designs, improving mobile user experience",
-      ],
-      technologies: ["Node.js", "React", "MongoDB", "Express"],
-      color: "purple",
-    },
+        id: 5,
+        role: "Tech Fest Organizer",
+        company: "SDIET College",
+        location: "SDIET College",
+        duration: "February 2025",
+        description:
+          "Organized and managed the SDIET Tech Fest 2025, coordinating various tech events and ensuring smooth execution.",
+        achievements: [
+          "Managed a team of volunteers and coordinators to execute a successful tech fest",
+          "Planned and structured events, including hackathons, coding contests, and guest lectures",
+          "Handled event logistics, sponsorships, and participant engagement",
+        ],
+        technologies: ["Event Management", "Leadership", "Coordination"],
+        color: "gree",
+      },
+      {
+        id: 4,
+        role: "Hackathon Participant",
+        company: "HackWithMAIT 5.0",
+        location: "Delhi, India",
+        duration: "October 2024",
+        description:
+          "Developed CertifyMe, a Web3-based certificate generation and verification platform.",
+        achievements: [
+          "Created a decentralized system for issuing verifiable certificates",
+          "Implemented blockchain-based certificate validation",
+          "Designed an efficient and secure certificate storage mechanism",
+        ],
+        technologies: ["React", "Solidity", "IPFS", "Ethereum"],
+        color: "purple",
+      },
+    
     {
       id: 3,
-      role: "Web Developer",
-      company: "Digital Solutions",
-      location: "Chicago, IL",
-      duration: "Jun 2018 - Feb 2020",
+      role: "Hackathon Participant",
+      company: "SIH (Smart India Hackathon) 2024",
+      location: "India",
+      duration: "August 2024",
       description:
-        "Worked on various client projects, developing responsive websites and web applications. Collaborated with a team of designers and developers to deliver projects on time.",
+        "Built an alumni-student interaction platform to enhance networking and mentorship opportunities.",
       achievements: [
-        "Developed a custom CMS for a major client, saving them $20K in licensing fees",
-        "Implemented SEO best practices, improving client site rankings by 40%",
-        "Created reusable component libraries, increasing development efficiency",
+        "Presented at college level and cleared the college round.",
+        "Implemented real-time chat and alumni search features",
+        "Designed a user-friendly dashboard for students and alumni",
       ],
-      technologies: ["JavaScript", "HTML/CSS", "PHP", "MySQL"],
+      technologies: ["React", "Node.js", "MongoDB", "Socket.io"],
       color: "green",
     },
-  ]
+    
+    {
+        id: 2,
+        role: "Hackathon Participant",
+        company: "HackIndia Web3 Hackathon",
+        location: "India",
+        duration: "July 2024",
+        description:
+          "Developed a Web3-based decentralized voting system, ensuring security and transparency in elections.",
+        achievements: [
+          "Implemented smart contracts for secure and tamper-proof voting",
+          "Optimized blockchain transactions to minimize gas fees",
+          "Designed an intuitive UI for seamless user experience",
+        ],
+        technologies: ["React", "Solidity", "Ethereum", "Web3.js"],
+        color: "purple",
+      },
+   
+    
+   
+  ];
+  
+  
 
   // Education data
   const education = [
     {
       id: 1,
-      degree: "Master of Computer Science",
-      institution: "Stanford University",
-      location: "Stanford, CA",
-      duration: "2016 - 2018",
-      description: "Specialized in Artificial Intelligence and Machine Learning. Graduated with honors.",
+      degree: "B.Tech in Computer Science & Engineering",
+      institution: "Satyug Darshan Institute of Engineering & Technology (SDIET)",
+      location: "Faridabad, Haryana",
+      duration: "2023 - 27",
+      description: "Pursuing a comprehensive curriculum in computer science, focusing on software development, data structures, and algorithms.",
       achievements: [
-        "Published a research paper on neural networks in the IEEE conference",
-        "Developed an AI-powered recommendation system as part of thesis project",
-        "Received the Outstanding Graduate Student Award",
+        "Active participant in coding competitions and hackathons.",
+        "Organized and led workshops on web development and emerging technologies.",
+        "Organized and led Tech Fest 2025 at SDIET College. with a team of 11 members.",
+        "Showcased SDIETTechies Platfrom at our college Tech Fest and secured 1st place."
+
       ],
-      color: "red",
+      color: "blue",
     },
     {
       id: 2,
-      degree: "Bachelor of Science in Computer Engineering",
-      institution: "MIT",
-      location: "Cambridge, MA",
-      duration: "2012 - 2016",
-      description:
-        "Focused on software engineering and computer architecture. Participated in multiple hackathons and coding competitions.",
+      degree: "Senior Secondary Education (12th)",
+      institution: "Sarvodaya Bal Vidyalaya No.1",
+      location: "Delhi",
+      duration: "2021 - 2023",
+      description: "Studied PCM (Physics, Chemistry, Mathematics)",
       achievements: [
-        "Dean's List for all semesters",
-        "Won first place in the university hackathon",
-        "Completed a summer internship at Google",
+        "Secured 81% in board examinations.",
+        "Participated in Delhi Government's Student Entrepreneurship Program, where I worked on a startup idea and gained hands-on experience in business development.",
+        "Built my first HTML website, sparking my passion for technology and web development."
       ],
-      color: "yellow",
+      color: "green",
     },
-  ]
+
+  ];
+  
 
   // Certifications data
   const certifications = [
     {
       id: 1,
-      name: "AWS Certified Solutions Architect",
-      issuer: "Amazon Web Services",
-      date: "2022",
-      color: "orange",
-    },
-    {
-      id: 2,
-      name: "Google Cloud Professional Developer",
-      issuer: "Google",
-      date: "2021",
+      name: "Technical Project Showcase",
+      issuer: "Satyug Darshan Institute of Engineering & Technology",
+      date: "March 2025",
       color: "blue",
     },
     {
+      id: 2,
+      name: "Generative AI Study Jams 2023-2024",
+      issuer: "Satyug Darshan Institute of Engineering & Technology",
+      date: "January 2025",
+      color: "red",
+    },
+    {
       id: 3,
-      name: "Microsoft Certified: Azure Developer Associate",
-      issuer: "Microsoft",
-      date: "2020",
+      name: "HackwithMait 5.0",
+      issuer: "Maharaja Agrasen Institute Of Technology, Delhi",
+      date: "October 2024",
       color: "purple",
     },
     {
       id: 4,
-      name: "Certified Kubernetes Administrator",
-      issuer: "Cloud Native Computing Foundation",
-      date: "2021",
+      name: "web3 Hackathon ",
+      issuer: "HackIndiaHackIndia",
+      date: "September 2024",
+      color: "yellow",
+    },
+    {
+      id: 5,
+      name: "Logo Making Competition",
+      issuer: "Satyug Darshan Institute of Engineering & Technology",
+      date: "August 2024",
+      color: "green",
+    },
+    {
+      id: 6,
+      name: "Web3 Hackathon",
+      issuer: "HackIndia",
+      date: "August 2024",
       color: "teal",
     },
-  ]
+    
+  ];
+  
+
+  
 
   // Get active data based on tab
   const getActiveData = () => {
